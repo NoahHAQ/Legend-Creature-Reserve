@@ -1,0 +1,1283 @@
+/*  */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    scroll-behavior: smooth;
+}
+
+body {
+	font-family: "Trebuchet MS", Arial, sans-serif;
+    overflow-x: hidden;
+}
+
+body > div {
+    background: #4c5c40;
+}
+
+li {
+    list-style: none;
+}
+
+h1 {
+    font-weight: bolder;
+    text-shadow: #ffffff 4px 4px 10px;
+}
+
+/* Loading */
+
+#loading {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	background: white url(../images/loading.gif) center center no-repeat;
+	top: 0;
+	left: 0;
+	transition: all 0.5s ease;
+    z-index: 100;
+}
+
+body.loaded #loading {
+	opacity: 0;
+	visibility: hidden;
+}
+
+/* Navbar */
+
+.main-menu {
+    width: 100vw;
+    background-color: white;
+    height: 60px;
+}
+
+.main-menu ul {
+    display: flex;
+}
+
+.main-menu > ul > li {
+    display: none;
+    line-height: 40px;
+    padding-top: 10px;
+}
+
+#home-icon, #list {
+    display: block;
+    margin-left: 10px;
+}
+
+.list-menu{
+    display: none;
+}
+
+.list-menu a {
+    color: white;
+}
+
+.list-menu a:hover {
+    color: #D8AE4B;
+}
+
+.list-menu li a:active {
+    color: #727989;
+}
+
+#list:hover .list-menu {
+    display: flex;
+    position: absolute;
+    left: 0;
+    background-color: #4c5c40;
+    font-weight: bolder;
+    z-index: 100;
+}
+
+#list:hover .list-menu ul {
+    display: block;
+    width: 100vw;
+    text-align: center;
+    font-size: 1.8em;
+}
+
+#list:hover .list-menu ul li {
+    padding: 20px;
+}
+
+.list-menu .downtext {
+    display: flex;
+    font-size: 15px;
+    font-weight: normal;
+}
+
+/* Footer */
+
+footer {
+    width: 100%;
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #4c5c40;
+    color: white;
+    text-align: center;
+}
+
+footer div {
+    margin: 5px;
+}
+
+footer div > p:first-child {
+    font-weight: bolder;
+    font-size: 1.3em;
+}
+
+footer a {
+    color: white;
+}
+
+/* Home Content */
+
+#home-content {
+    position: absolute;
+    top: 80px;
+    width: 100vw;
+    height: calc(100vh - 80px);
+    background-image: url(../images/Unicorn-home.png);
+    background-size: cover;
+	background-position: center center;
+    z-index: -1;
+}
+
+#home-content.unicorn {
+    background-image: url(../images/Unicorn-home.png);
+}
+
+#home-content.basilisk {
+    background-image: url(../images/Basilisk-home.jpg);
+    background-position: left center;
+}
+
+#home-content.manticore {
+    background-image: url(../images/Manticore-home.jpg);
+    background-position: left center;
+}
+
+#home-content.lamb-plant {
+    background-image: url(../images/Vegetable_lamb_of_tartary-home.jpg);
+    background-position: right center;
+}
+
+#home-content h1 {
+    width: 80%;
+    line-height: 1.5em;
+    text-align: center;
+    font-size: 2.8em;
+    font-family: 'Permanent Marker', cursive;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    margin-left: -40%;
+}
+
+#home-content button {
+    width: 50%;
+    height: 5vh;
+    position: relative;
+    top: 55%;
+    left: 50%;
+    margin-left: -25%;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 20px;
+    background: transparent;
+    box-shadow: rgba(0,0,0,0.15) 3px 3px 5px;
+    font-size: 0.9em;
+    font-weight: bolder;
+    letter-spacing: 1px;
+    cursor: pointer;
+    overflow: hidden;
+    z-index: 1;
+}
+
+#home-content button > span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 4px solid #D8AE4B;
+    border-radius: 20px;
+    background: white;
+    z-index: -1;
+}
+
+#home-content button > span::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 8%;
+    height: 5000%;
+    background: white;
+    transform: translate(-50%, -50%) rotate(-60deg);
+    transition: all 0.4s;
+}
+
+#home-content button:hover,
+#home-content button:hover {
+    color: #4c5c40;
+}
+
+#home-content button:hover > span::before,
+#home-content button:hover > span:focus{
+    transform: translate(-50%, -50%) rotate(-90deg);
+    width: 100%;
+    background: #D8AE4B;
+}
+
+#home-content a {
+    display: none;
+}
+
+#home-content a p {
+    color: black;
+}
+
+#content-to-use {
+    visibility: hidden;
+}
+
+/* Introduction */
+
+main {
+    width: 90vw;
+    margin: 40px auto;
+}
+
+.side-nav {
+    display: none;
+    background-color: #D8AE4B;
+}
+
+.side-nav ul li {
+    padding: 10% 0;
+    margin: 5% 0;
+    border-bottom: #4c5c40 solid;
+}
+
+#intro-content {
+    width: 100%;
+    text-align: center;
+}
+
+#intro-content > div {
+    margin: 1% 3%;
+    padding-bottom: 3%;
+    word-wrap: break-word;
+}
+
+.title {
+    border-bottom: #727989 solid;
+    padding-bottom: 1%;
+    margin-bottom: 2%;
+}
+
+/* Brief */
+
+#brief > div:first-of-type {
+    margin: 1% 3%;
+}
+
+#brief > div > p {
+    text-align: left;
+}
+
+#location img {
+    width: 15%;
+    height: 15%;
+    margin-top: 20px;
+}
+
+#location p {
+    display: none;
+}
+
+/* Animals */
+
+#index {
+    margin: 1% 3%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+#index figure {
+    width: 40%;
+    margin: 5%;
+    font-size: large;
+    letter-spacing: 0.5px;
+}
+
+#index img {
+	border-radius: 100%;
+	max-width: 100%;
+    border: 1px solid #ccc;
+    box-shadow: rgba(0,0,0,0.15) 3px 3px 5px;
+}
+
+#learn-more {
+    position: relative;
+    font-size: 20px;
+    font-weight: bolder;
+    color: #727989;
+    letter-spacing: 3px;
+    margin-top: 25px;
+    padding: 10px 0;
+    border: 3px solid #727989;
+    overflow: hidden;
+    transition: color 0.5 linear;
+}
+
+#learn-more > div {
+    position: relative;
+    z-index: 2;
+}
+
+#learn-more:hover {
+    color: #D8AE4B;
+}
+
+#learn-more::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -45px;
+    height: 100%;
+    width: 150%;
+    background-color: #727989;
+    transform: translate(-100%) skew(40deg);
+    transition: transform 0.3s linear;
+}
+
+#learn-more:hover::before {
+    transform: translate(-1%) skew(40deg);
+}
+
+/* Map */
+
+#map img {
+    max-width: 95%;
+    border: #727989 solid;
+    border-radius: 10px;
+    opacity: 80%;
+    box-shadow: #727989 0 6px 10px 3px;
+}
+
+/* Openning Hours */
+
+#openning-hours {
+    padding-top: 20px;
+}
+
+/* Travel Tips */
+
+#page-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+	font-size: 1.6em;
+    width: 100vw;
+    height: 10vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+	background-position: center center;
+}
+
+body#recreation #page-header {
+	background-image: url(../images/recreation.jpg);
+}
+
+body#accommodation #page-header {
+	background-image: url(../images/accommodation.jpg);
+}
+
+body#restaurant #page-header {
+	background-image: url(../images/restaurant.jpeg);
+}
+
+/* Tips Content */
+
+.tips-content {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.tips-content > div {
+    width: 90%;
+    margin: 5vw;
+    display: block;
+    background-color: #e7e7e7;
+    border-radius: 10px;
+    transition: transform 0.7s ease;
+}
+
+.tips-content > div:nth-child(odd) {
+    transform: translateX(200%);
+}
+
+.tips-content > div:nth-child(even) {
+    transform: translateX(-200%);
+}
+
+.tips-content > div.show {
+    transform: translateX(0);
+}
+
+.content-picture {
+    width: 100%;
+}
+
+.content-picture img {
+    width: 100%;
+    height: 100%;
+}
+
+.content-description {
+    width: 95%;
+    margin: 0 auto;
+    padding: 20px 0;
+    font-size: 16px;
+    line-height: 2em;
+    align-self: center;
+}
+
+/* Booking */
+
+body#booking #page-header {
+	background-image: url(../images/booking.jpeg);
+}
+
+#booking-content {
+    width: 95%;
+    line-height: 2em;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#booking-content fieldset {
+    width: 90%;
+    margin: 5% auto;
+    padding: 5%;
+    background-color: #f8f8f8;
+    border: #D8AE4B solid;
+    border-radius: 8px;
+}
+
+#booking-content #sign-up fieldset {
+    border: none;
+}
+
+#booking-content legend {
+    padding: 0 20px;
+    font-size: 1.5em;
+    font-weight: bolder;
+    color: #D8AE4B;
+}
+
+#booking-content h4 {
+    text-align: left;
+    margin-bottom: 5%;
+    font-size: 1.2em;
+}
+
+#reservation {
+    display: block;
+}
+
+#reservation section {
+    width: 100%;
+}
+
+#reservation section:first-of-type {
+    margin-bottom: 30px;
+}
+
+#reservation h4 {
+    text-align: center;
+    text-shadow: rgba(0,0,0,0.3) 3px 5px 5px;
+}
+
+#reservation .form-item {
+    text-align: center;
+}
+
+#reservation .form-item > label {
+    font-weight: bold;
+}
+
+#reservation .form-item .form-element {
+    margin-bottom: 15px;
+}
+
+#reservation .form-item .form-element > label {
+    margin: 0 10px;
+}
+
+input[type=text], textarea {
+    width: 70%;
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background: white;
+    box-shadow: rgba(0,0,0,0.15) 3px 3px 5px;
+    font-size: 0.9em;
+}
+
+input[type=text]:focus {
+    border-color: #2cb5e8;
+}
+
+input[type=text].error, input[type=number].error {
+	border-color: red;
+}
+
+label.error {
+	color: red;
+}
+
+.errortext {
+	color: red;
+    font-size: 0.5em;
+    margin: 10px 0;
+}
+
+select {
+    width: 15%;
+    font-size: 1em;
+	text-align: center;
+	border-radius: 5px;
+	border-color: rgb(199, 199, 199);
+	background-color: #f8f7f7
+}
+
+input[type=radio] {
+    margin-right: 0.3em;
+}
+
+form button {
+    font-weight: bold;
+    font-size: 1em;
+    background: #D8AE4B;
+    padding: 0.5em 1em;
+    color: white;
+    border: 0;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+form button:active {
+    background: #727989;
+}
+
+form button[disabled] {
+	background: #ddd;
+	color: #727989;
+	cursor: default;
+}
+
+#info-list .info-block {
+    text-align: left;
+    line-height: 3em;
+    background: white;
+    margin: 30px 0 10px 0;
+    padding: 20px 40px;
+    border: #727989 solid;
+    border-radius: 8px;
+    box-shadow: rgba(0,0,0,0.25) 5px 5px 10px;
+}
+
+#info-list .info-block p:first-of-type{
+    font-size: 2em;
+    font-weight: bolder;
+    margin: 15px 0;
+}
+
+#info-list .info-block p:nth-of-type(4){
+    opacity: 50%;
+}
+
+#info-list .info-block p:last-of-type{
+    visibility: hidden;
+}
+
+#info-list .info-block span {
+    margin-right: 5%;
+}
+
+#info-list .delete-button:before {
+    content: "\2716  Delete";
+    color: red;
+    cursor: pointer;
+}
+
+/* Help */
+
+body#help #page-header {
+	background-image: url(../images/help.jpeg);
+}
+
+#help-content {
+    width: 95%;
+    line-height: 2em;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#help-content div {
+    width: 90%;
+    margin: 5% auto;
+    padding: 5%;
+    background-color: #d3d3d3;
+    border-radius: 20px;
+}
+
+#help-content img {
+    width: 10%;
+}
+
+/* Animal Details */
+
+#description article {
+	overflow: hidden;
+    width: 95%;
+	border: 2px solid #888;
+	padding: 1em 2em;
+    margin: 0 auto;
+	border-radius: 10px;
+	margin-top: 2em;
+}
+
+#description article > h2 {
+	text-align: center;
+	margin-bottom: 1em;
+}
+
+#description article p:first-of-type:first-letter {
+	float: left;
+	font-family: sans-serif;
+	font-size: 3em;
+	color: #D8AE4B;
+	margin-top: -0.3em;
+	margin-right: 0.2em;
+}
+
+#description .read-more a {
+    line-height: 40px;
+	font-size: 1.25em;
+	font-weight: bold;
+}
+
+#description figure {
+    text-align: center;
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 3px solid #D8AE4B;
+}
+
+#description img {
+    width: 100%;
+}
+
+#description figcaption {
+    font-size: 0.8em;
+}
+
+/* Location */
+
+#location-map {
+    width: 100vw;
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+}
+
+iframe {
+    width: 90%;
+    height: 95%;
+}
+
+/* About */
+
+body#about #page-header {
+    background-image: url(../images/about.jpg);
+}
+
+#resources {
+    width: 70%;
+    margin: 0 auto;
+}
+
+#resources div {
+    display: flex;
+    flex-direction: column;
+}
+
+#resources h2 {
+    margin:  30px 0 5px 0;
+    font-size: 3em;
+    font-family: 'Acme', sans-serif;
+}
+
+#resources h3 {
+    margin-top: 10px;
+    font-size: 2em;
+    font-family: 'Acme', sans-serif;
+}
+
+
+/* font-family: 'Acme', sans-serif; */
+
+@media only screen and (min-width: 720px) {
+    
+    /* Navbar */
+
+    .main-menu ul {
+        justify-content: space-evenly;
+    }
+    
+    .main-menu > ul > li {
+        padding: 10px 15px 0px 15px;
+        display: block;
+        font-size: 26px;
+    }
+
+    .main-menu a {
+        color: #000000;
+    }
+
+    .main-menu li a:hover {
+        color: #D8AE4B;
+    }
+
+    .main-menu li a:active {
+        color: #727989;
+    }
+
+    #list {
+        display: none;
+    }
+
+    .downtext {
+        display: none;
+        text-align: center;
+        z-index: 2;
+    }
+
+    .downtext a{
+        color: white;
+    }
+    
+    .travel-tips:hover .downtext {
+        display: block;
+        width: 100%;
+        margin-top: 8px;
+        padding: 10px 0;
+        position: absolute;
+        left: 0;
+        background-color: #4c5c40;
+    }
+    
+    .travel-tips:hover .downtext ul {
+        display: flex;
+    }
+
+    /* Home Content */
+    
+    #home-content h1 {
+        text-align: center;
+        font-size: 3em;
+    }
+
+    #home-content button {
+        width: 40%;
+        height: 50px;
+        margin-left: -20%;
+        font-size: 1.2em;
+    }
+    
+    #home-content a {
+        display: block;
+        width: 35vw;
+        height: auto;
+        position: absolute;
+        bottom: 2%;
+        right: 3%;
+        padding: 8px;
+        border-radius: 8px;
+        background-color: rgb(138, 138, 138);
+        opacity: 90%;
+        transition: 0.5s ease-in-out;
+
+    }
+
+    #home-content a.expended {
+        width: 50vw;
+    }
+    
+    #home-content a p {
+        padding: 5px 20px;
+        color: black;
+        font-weight: bolder;
+    }
+
+    /* Introduction */
+
+    .side-nav {
+        display: block;
+        width: 18%;
+        text-align: center;
+        position: fixed;
+
+    }
+    
+    .side-nav ul {
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    .side-nav ul a:link, .side-nav ul a:visited {
+        color: #161b12;
+    }
+
+    .side-nav ul a:active {
+        color: #727989;
+    }
+    
+    #intro-content {
+        width: 80%;
+        margin-left: auto;
+        margin-right: 0;
+    }
+
+    /* Brief */
+
+    #brief > div {
+        display: flex;
+    }
+
+    #brief > div > p {
+        font-size: 1.2em;
+    }
+
+    #location img {
+        width: 40px;
+        height: 40px;
+    }
+    
+    #location p {
+        display: block;
+    }
+
+    /* Location Popup */
+
+    #location-popup {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background: rgba(0,0,0,0.75);
+        transition: all 0.5s ease;
+        visibility: hidden;
+        opacity: 0;
+        z-index: 100;
+    }
+    
+    #location-popup #location-map {
+        background: white;
+        margin: 5em;
+        box-shadow: rgba(0,0,0,0.25) 5px 5px 10px;
+        position: relative;
+        border-radius: 5px;
+    }
+    
+    #location-popup .close-button {
+        color: #D8AE4B;
+        font-size: 2em;
+        position: absolute;
+        top: 0;
+        left: 0;
+        margin: 1em;
+        cursor: pointer;
+    }
+    
+    #location-popup .close-button:before {
+        content: "\2716";
+    }
+    
+    body.show-popup {
+        overflow: hidden;
+    }
+    
+    body.show-popup #location-popup {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    /* Animals */
+
+    #index figure {
+        font-size: 1.2em;
+    }
+
+    /* Openning Hours */
+
+    #openning-hours p {
+        font-size: 1.3em;
+    }
+
+    /* Travel Tips */
+
+    #page-header {
+        font-size: 2.5em;
+        height: 30vh;
+    }
+
+    /* Tips Content */
+
+    .content-description {
+        font-size: 1.2em;
+    }
+
+    /* Booking */
+
+    body#booking #page-header {
+        height: 30vh;
+    }
+
+    #booking-content legend {
+        font-size: 2em;
+    }
+
+    #booking-content h4 {
+        font-size: 1.3em;
+    }
+
+    #booking-content p {
+        font-size: 1.2em;
+    }
+
+    #reservation section:first-of-type h4 {
+        margin-bottom: 60px;
+    }
+
+    #reservation section:first-of-type p {
+        line-height: 60px;
+    }
+
+    /* Help */
+
+    body#help #page-header {
+        height: 30vh;
+    }
+
+    /* Location */
+
+    #location-map {
+        align-items: center;
+    }
+
+    iframe {
+        height: 90%;
+    }
+
+    #reservation {
+        display: flex;
+    }
+
+    #reservation section {
+        width: 49%;
+    }
+    
+    #reservation section:first-of-type {
+        padding-right: 1%;
+        border-right: #727989 solid;
+        margin-right: 1%;
+    }
+
+    /* Animal Details */
+
+    #description figure {
+        float: left;
+        max-width: 30%;
+        margin-right: 20px;
+    }
+
+    /* About */
+
+    body#about #page-header {
+        height: 30vh;
+    }
+
+}
+
+
+@media only screen and (min-width: 1000px) {
+
+    /* Navbar */
+
+    .main-menu > ul > li {
+        font-weight: bolder;
+    }
+
+    /* Footer */
+
+    body#about footer{
+        position: absolute;
+        bottom: 0;
+    }
+
+    /* Home Content*/
+
+    #home-content h1 {
+        font-size: 4em;
+    }
+
+    #home-content button {
+        font-size: 1.2em;
+    }
+
+    /* Introduction */
+
+    .side-nav ul li {
+        font-size: 1.2em;
+    }
+
+    main {
+        width: 70vw;
+    }
+
+    .side-nav {
+        display: block;
+        width: 14%;
+        text-align: center;
+        position: fixed;
+    }
+
+    .title {
+        font-size: 2em;
+    }
+
+    #index figure {
+        width: 21%;
+        margin: 2%;
+    }
+
+    /* Travel Tips */
+
+    #page-header {
+        font-size: 2.5em;
+        height: 90vh;
+    }
+
+    /* Tips Content */
+
+    .tips-content > div {
+        width: 80%;
+        height: auto;
+        margin: 10vw;
+        padding: 10px;
+        display: flex;
+        background-color: #c0c0c0;
+        border-radius: 10px;
+    }
+
+    .content-picture {
+        width: 40vw;
+        position: relative;
+        top: -30%;;
+        left: -6%;
+    }
+
+    .content-picture img {
+        float: left;
+    }
+
+    .content-description {
+        width: 45vw;
+        margin-right: 40px;
+    }
+
+    /* Booking */
+
+    #booking-content legend {
+        font-size: 3em;
+    }
+    
+    #booking-content h4 {
+        font-size: 1.4em;
+    }
+
+    #booking-content p {
+        font-size: 1.4em;
+    }
+
+    #info-list .info-block {
+        font-size: 1.1em;
+    }
+
+    /* Help */
+
+    #help-content {
+        font-size: 1.2em;
+    }
+
+    #help-content div {
+        margin: 4% auto;
+    }
+
+    /* Animal Details */
+
+    #description article {
+        font-size: 1.2em;
+    }
+
+    /* About */
+
+    #resources {
+        display: flex;
+        width: 70%;
+    }
+
+    #resources section {
+        width: 50%;
+        padding-left: 10%;
+    }
+
+}
+
+
+@media only screen and (min-width: 1300px) {
+
+    /* Navbar */
+    
+    .main-menu ul li {
+        display: block;
+        line-height: 40px;
+        font-size: 35px;
+    }
+
+    /* Home Content */
+
+    #home-content h1 {
+        font-size: 5em;
+    }
+
+    #home-content button {
+        font-size: 1.2em;
+    }
+
+    #home-content a p {
+        font-size: 1.2em;
+    }
+
+    /* Introduction */
+
+    .side-nav ul li {
+        font-size: 1.5em;
+        font-weight: bolder;
+    }
+
+    /* Brief */
+
+    #brief > div > p {
+        font-size: 1.5em;
+    }
+
+    #location p {
+        font-size: 1.3em;
+    }
+
+    /* Animals */
+
+    #index figure {
+        font-size: 1.5em;
+    }
+
+    /* Map */
+
+    #map img {
+        width: 85%;
+    }
+
+    /* Openning Hours */
+
+    #openning-hours p {
+        font-size: 1.5em;
+    }
+
+    /* Travel Tips */
+
+    #page-header {
+        font-size: 3em;
+        height: 90vh;
+    }
+
+    /* Tips Content */
+
+    .content-description {
+        font-size: 1.5em;
+    }
+
+    .content-picture {
+        width: 30vw;
+    }
+
+    /* Booking */
+
+    #booking-content h4 {
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 1.8em;
+    }
+
+    #booking-content p {
+        font-size: 1.6em;
+    }
+
+    #reservation .form-item label {
+        font-size: 1.3em;
+        margin-bottom: 10px;
+    }
+    
+    #info-list .info-block {
+        font-size: 1.2em;
+    }
+
+    /* Help */
+
+    #help-content {
+        font-size: 1.5em;
+    }
+
+    #help-content div {
+        margin: 3% auto;
+    }
+
+    /* Animal Details */
+
+    #description article {
+        font-size: 1.3em;
+    }
+
+    /* About */
+
+    #resources {
+        width: 65%;
+    }
+
+    #resources div a {
+        font-size: 1.3em;
+    }
+
+}

@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewpoint" content="width=device-width; initial-scale=1.0">
+        <title>Booking | Legend Creature Reserve</title>
+        <link rel="stylesheet" href="css\style.css">
+    </head>
+    
+    <body id="booking">
+
+        <div><img></div>
+
+        <nav>
+
+            <div class="main-menu">
+                <ul>
+                    <li id="home-icon">
+                        <a href="index.html">
+                            <img src="images\Home.png" style="width:40px;height:40px;">
+                        </a>
+                    </li>
+                    <li class="introduction">
+                        <a href="introduction.html">Inrtoduction</a>
+                    </li>
+                    <li class="travel-tips">
+                        <a href="#">Travel Tips</a>
+                        <div class="downtext">
+                            <ul>
+                                <li>
+                                    <a href="recreations.html">Recreations</a>
+                                </li>
+                                <li>
+                                    <a href="accommodations.html">Accommodations</a>
+                                </li>
+                                <li>
+                                    <a href="restaurants.html">Restaurants</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="booking">
+                        <a href="booking.html">Booking</a>
+                    </li>
+                    <li class="help-page">
+                        <a href="help-page.html">Planning Help</a>
+                    </li>
+                    <li class="about">
+                        <a href="about.html">About</a>
+                    </li>
+                    <li id="list">
+                        <a href="#">
+                            <img src="images\Filter.png" style="width:40px;height:40px;">
+                        </a>
+                        <div class="list-menu">
+                            <ul>
+                                <li class="introduction">
+                                    <a href="introduction.html">Inrtoduction</a>
+                                </li>
+                                <li class="travel-tips">
+                                    <a href="#">Travel Tips</a>
+                                    <div class="downtext">
+                                        <ul>
+                                            <li>
+                                                <a href="recreations.html">Recreations</a>
+                                            </li>
+                                            <li>
+                                                <a href="accommodations.html">Accommodations</a>
+                                            </li>
+                                            <li>
+                                                <a href="restaurants.html">Restaurants</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="booking">
+                                    <a href="booking.html">Booking</a>
+                                </li>
+                                <li class="help-page">
+                                    <a href="help-page.html">Planning Help</a>
+                                </li>
+                                <li class="about">
+                                    <a href="about.html">About</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+        </nav>
+
+        <header id="page-header">
+            <h1>Booking</h1>
+        </header>
+
+        <section id="booking-content">
+
+            <fieldset id="reservation-price">
+
+                <legend>Reservation Price</legend>
+
+                <h4><em>Note: </em>Because we accept tourists on a weekly basis, you'd better book in advance. This includes entrance fee and accommodation fee but no food supply.</h4>
+
+                <p>Adults: $1500 per person</p>
+                <p>Children & Student: $1200 per person (30% OFF)</p>
+
+            </fieldset>
+
+            <fieldset id="island-pass">
+
+                <legend>Island Pass</legend>
+
+                <h4><em>Note: </em>Each island has its own pass, which allows you to take a ferry to the island and enjoy recreations on the island for free. The validity of the pass lasts for your entire holiday. You can choose to play without passes but your costs will depend on the island's own pricing</h4>
+
+                <p>Adults: $1000 per person</p>
+                <p>Children & Student: $700 per person (30% OFF)</p>
+                <p>The Elderly: $500 per person (50% OFF)</p>
+
+            </fieldset>
+
+            <fieldset id="reservation">
+
+                <legend>Reservation</legend>
+
+                <section>
+
+                    <h4>Contact Us</h4>
+
+                    <p>Phone: 6800-2784-87XX</p>
+                    <p>Email: LCReserve@outlook.com</p>
+
+                </section>
+
+                <section>
+                    
+                    <h4>Sign Up</h4>
+
+                    <form method="get" id="sign-up" >
+
+                        <fieldset>
+
+                            <div class="form-item">
+                                <label for="form-full-name">Name:</label>
+                                <div class="form-element">
+                                    <input type="text" name="full_name" id="form-full-name" placeholder="First and last names">
+                                </div>
+                            </div>
+
+                            <div class="form-item">
+                                <label for="form-phone">Phone:</label>
+                                <div class="form-element">
+                                    <input type="text" name="phone" id="form-phone" placeholder="Eleven digit phone number">
+                                </div>
+                            </div>
+
+                            <div class="form-item">
+                                <label for="form-email">Email:</label>
+                                <div class="form-element">
+                                    <input type="text" name="email" id="form-email" placeholder="Must be a valid email address">
+                                </div>
+                            </div>
+
+                            <div class="form-item">
+                                <label for="form-number">Number Of People:</label>
+                                <div class="form-element">
+                                    <select name="form-number" id="people-number">
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5+</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-item">
+                                <label>Have Elderly:</label>
+                                <div class="form-element" id="elderly">
+                                    <label for="elderly-yes">
+                                        <input type="radio" id="elderly-yes" name="elderly" value="Yes">Yes
+                                    </label>
+                                    <label for="elderly-no">
+                                        <input type="radio" id="elderly-no" name="elderly" value="No" checked="true">No
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="form-item">
+                                <label>Have Children:</label>
+                                <div class="form-element" id="children">
+                                    <label for="children-yes">
+                                        <input type="radio" id="children-yes" name="children" value="Yes">Yes
+                                    </label>
+                                    <label for="children-no">
+                                        <input type="radio" id="children-no" name="children" value="No"  checked="true">No
+                                    </label>
+                                </div>
+                            </div>
+
+                        </fieldset>
+
+                        <button type="submit">Submit</button>
+
+                    </form>
+
+                </section>
+
+            </fieldset>
+
+            <fieldset id="info-list">
+                
+                <legend>Exist Reservations</legend>
+
+            </fieldset>
+        </section>
+
+        <footer>
+
+            <div>
+                <p>Contact Us</p>
+                <p>Phone: 6800-2784-87XX</p>
+                <p>Email: LCReserve@outlook.com</p>
+            </div>
+            
+            <div>
+                <p><a href="about.html">About</a></p>
+            </div>
+
+            <div>
+                <p>©2022 LCR</p>
+            </div>
+
+        </footer>
+
+        <script src="js/script.js"></script>
+        
+    </body>
+
+</html>
